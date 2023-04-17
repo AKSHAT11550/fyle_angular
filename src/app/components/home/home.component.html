@@ -1,0 +1,32 @@
+
+<div class="box"> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container my-2">
+          
+          <div class="search-bar"> 
+            <form> 
+              <input type="text" [(ngModel)]="myString" placeholder="Search"> 
+              <button (click)="getAlldata()" id="searchButton"routerLink="/table"><i class="fas fa-search"></i></button> 
+            </form> 
+          </div> 
+        </div>
+    
+        
+    </nav>
+</div> 
+
+<div class="container"> 
+  <div class="sidebar"> 
+    <div class="w3-sidebar w3-bar-block" style="width:25%"> 
+      <div class="tw-font-600 tw-text-24-px ">Trending Subjects</div> 
+      <ul class="tw-list-none tw-pl-0"> 
+          <li class="tw-text-16-px tw-cursor-pointer tw-p-12-px" routerLink="/"> Home</li> 
+         <li class="tw-text-16-px tw-cursor-pointer tw-p-12-px" *ngFor="let subject of trendingSubjects" routerLink="/trending-subject/{{ subject.name }}"> 
+          {{ subject.name }} 
+        </li>  
+      </ul> 
+    </div> 
+  </div> 
+</div>
+
+
